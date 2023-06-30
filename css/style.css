@@ -3,11 +3,16 @@
   --fw-main: 500;
   /* --ff-main:  */
   --clr-ludo-border: rgb(36, 36, 36);
-  --clr-ludo-outline: rgb(48, 48, 48);
-  --clr-red-square : linear-gradient(red,rgb(206, 1, 1));
+  --clr-ludo-outline: rgba(7, 7, 7, 0.7);
+  /* --clr-red-square : linear-gradient(red,rgb(206, 1, 1));
   --clr-green-square : linear-gradient(rgb(124, 252, 0),rgb(107, 212, 2));
   --clr-yellow-square: linear-gradient(rgb(255, 253, 106), rgb(228, 224, 0));
-  --clr-blue-square : linear-gradient(rgb(109, 168, 236), rgb(90, 140, 197));
+  --clr-blue-square : linear-gradient(rgb(109, 168, 236), rgb(90, 140, 197)); */
+
+  --clr-red-square : #dd0d11;
+  --clr-green-square : #6cb32f;
+  --clr-yellow-square: #f9b509;
+  --clr-blue-square : #26b2e9;
 
   /* --grid-size: min(90vw, 50rem); */
   --grid-size: min(95vw, 50rem);
@@ -73,8 +78,9 @@ body {
 .cell:nth-of-type(1) {
   grid-column: 1 / 7;
   grid-row: 1 / 7;
-  background-color: red;
-  background-image: var(--clr-red-square);
+  /* background-color: red; */
+  /* background-image: var(--clr-red-square); */
+  background-color: var(--clr-red-square);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,8 +90,10 @@ body {
 .cell:nth-of-type(5) {
   grid-column: 10 / 16;
   grid-row: 1 / 7;
-  background-color: green;
-  background-image: var(--clr-green-square);
+  /* background-color: green;
+  background-image: var(--clr-green-square); */
+  background-color: var(--clr-green-square);
+
 
 }
 
@@ -94,10 +102,10 @@ body {
   background-color: #000;
   grid-column: 7 / 10;
   grid-row: 7 / 10;
-  border-top: calc(var(--grid-size) / 10) solid green;
-  border-right: calc(var(--grid-size) / 10) solid skyblue;
-  border-bottom: calc(var(--grid-size) / 10) solid yellow;
-  border-left: calc(var(--grid-size) / 10) solid red;
+  border-top: calc(var(--grid-size) / 10) solid var(--clr-green-square);
+  border-right: calc(var(--grid-size) / 10) solid var(--clr-blue-square);
+  border-bottom: calc(var(--grid-size) / 10) solid var(--clr-yellow-square);
+  border-left: calc(var(--grid-size) / 10) solid var(--clr-red-square);
   
 }
 
@@ -115,23 +123,26 @@ body {
 .outline-x.line-2 {
   rotate: -45deg;
 }
-
+/* yellow base */
 .cell:nth-of-type(58) {
-  background-color: yellow;
-  background-image: var(--clr-yellow-square);
+  /* background-color: yellow;
+  background-image: var(--clr-yellow-square); */
+  background-color: var(--clr-yellow-square);
   grid-column: 1 / 7;
   grid-row: 10 / 16;
 }
-
+/* blue base */
 .cell:nth-of-type(62) {
-  background-color: blue;
-  background-image: var(--clr-blue-square);
+  /* background-color: blue;
+  background-image: var(--clr-blue-square); */
+  background-color: var(--clr-blue-square);
+
   grid-column: 10 / 16;
   grid-row: 10 / 16;
 }
 
 
-
+/* Looks like a dice */
 .base-design {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -141,59 +152,51 @@ body {
   width: 70%;
   height: 70%;
   background-color: #fff;
-  border-radius: 2%; 
-  border: .15em solid black;
+  border-radius: 10%; 
+  border: .1em solid var(--clr-ludo-outline);
   box-shadow: 0px 1px 7px 4px rgba(0,0,0, .2);  
+  rotate: 45deg;
 }
 
-.red-des > .piece-holder {
+.piece-holder {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75%;
-  height: 75%;
-  background-color: red;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+.red-des > .piece-holder {
+  
+  background-color: var(--clr-red-square);
   /* possible highlight style */
-  background-image: radial-gradient(red, rgb(202, 68, 68));   
+  /* background-image: radial-gradient(red, rgb(202, 68, 68));    */
 
   /* Circular look  and can also lessen the width and height*/
-  /* border-radius: 50%; */
 }
 .green-des > .piece-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75%;
-  height: 75%;
-  background-color: green;
+  
+  background-color: var(--clr-green-square);
   /* possible highlight style */
-  background-image: radial-gradient(green, rgb(52, 172, 52));   
+  /* background-image: radial-gradient(green, rgb(52, 172, 52));    */
 
   /* Circular look  and can also lessen the width and height*/
   /* border-radius: 50%; */
 }
 .yellow-des > .piece-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75%;
-  height: 75%;
-  background-color: yellow;
+  
+  background-color: var(--clr-yellow-square);
   /* possible highlight style */
-  background-image: radial-gradient(yellow, rgb(167, 167, 51));   
+  /* background-image: radial-gradient(yellow, rgb(167, 167, 51));    */
 
   /* Circular look  and can also lessen the width and height*/
   /* border-radius: 50%; */
 }
 .blue-des > .piece-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75%;
-  height: 75%;
-  background-color: blue;
+ 
+  background-color: var(--clr-blue-square);
   /* possible highlight style */
-  background-image: radial-gradient(blue, rgb(58, 58, 116));   
+  /* background-image: radial-gradient(blue, rgb(58, 58, 116));    */
 
   /* Circular look  and can also lessen the width and height*/
   /* border-radius: 50%; */
@@ -327,32 +330,32 @@ body {
 }
 
 .green-start {
-  background-color: green;
-  background-image: var(--clr-green-square);
+  background-color: var(--clr-green-square);
+  /* background-image: var(--clr-green-square); */
 }
 
 .green.cell {
-  background-color: green;
-  background-image: var(--clr-green-square);
+  background-color: var(--clr-green-square);
+  /* background-image: var(--clr-green-square); */
 }
 .red-start {
-  background-color: red;
-  background-image: var(--clr-red-square);
+  background-color: var(--clr-red-square);
+  /* background-image: var(--clr-red-square); */
 }
 
 .red.cell {
-  background-color: red;
-  background-image: var(--clr-red-square);
+  background-color: var(--clr-red-square);
+  /* background-image: var(--clr-red-square); */
 }
 
 .yellow-start {
-  background-color: yellow;
-  background-image: var(--clr-yellow-square);
+  background-color: var(--clr-yellow-square);
+  /* background-image: var(--clr-yellow-square); */
 }
 
 .yellow.cell {
-  background-color: yellow;
-  background-image: var(--clr-yellow-square);
+  background-color: var(--clr-yellow-square);
+  /* background-image: var(--clr-yellow-square); */
 }
 
 .blue-start {
@@ -361,8 +364,8 @@ body {
 }
 
 .blue.cell {
-  background-color: blue;
-  background-image: var(--clr-blue-square);
+  background-color: var(--clr-blue-square);
+  /* background-image: var(--clr-blue-square); */
 }
 
 .arrow.cell {
