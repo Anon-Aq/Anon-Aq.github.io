@@ -4,11 +4,8 @@
   /* --ff-main:  */
   --clr-ludo-border: rgb(36, 36, 36);
   --clr-ludo-outline: rgba(7, 7, 7, .9);
-  /* --clr-red-square : linear-gradient(red,rgb(206, 1, 1));
-  --clr-green-square : linear-gradient(rgb(124, 252, 0),rgb(107, 212, 2));
-  --clr-yellow-square: linear-gradient(rgb(255, 253, 106), rgb(228, 224, 0));
-  --clr-blue-square : linear-gradient(rgb(109, 168, 236), rgb(90, 140, 197)); */
-  --clr-cells: #fff;
+
+  --clr-cells: white;
   --clr-red-square : #dd0d11;
   --clr-red-square-dark : #830103;
   --clr-green-square : #6cb32f;
@@ -17,6 +14,16 @@
   --clr-yellow-square-dark: #b38208;
   --clr-blue-square : #23abd4;
   --clr-blue-square-dark : #197794;
+
+  /* ALt colors */
+  /* --clr-red-square : #fc0000;
+  --clr-red-square-dark : #d10101;
+  --clr-green-square : #8bee8b;
+  --clr-green-square-dark : #5fee5f;
+  --clr-yellow-square: #fefe00;
+  --clr-yellow-square-dark: #e7e705;
+  --clr-blue-square : #0082fb;
+  --clr-blue-square-dark : #0068c9; */
 
   /* --grid-size: min(90vw, 50rem); */
   --grid-size: min(80vw, 50rem);
@@ -207,8 +214,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55%;
-  height: 55%;
+  width: 65%;
+  height: 65%;
   border-radius: 50%;
   rotate: -45deg;
 
@@ -479,6 +486,7 @@ body {
 .safe-square.green-safe::after{
   background-color: var(--clr-green-square);
   background-image: linear-gradient(var(--clr-green-square), var(--clr-green-square-dark));
+
 }
 .safe-square.blue-safe::after{
   background-color: var(--clr-blue-square);
@@ -490,6 +498,10 @@ body {
 }
 
 
+.star-img {
+  width: calc(var(--cell-size) * 2.5);
+  height: calc(var(--cell-size) * 2.5);
+}
 
 
 
